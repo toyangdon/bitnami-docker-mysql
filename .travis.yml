@@ -5,7 +5,7 @@ os:
 services:
   - docker
 before_install:
-  - docker build -t toyangdon/bitnami-mysql:latest -f 8.0/debian-10/Dockerfile .
+  - cd 8.0/debian-10/ && docker build -t toyangdon/bitnami-mysql:latest -f 8.0/debian-10/Dockerfile .
   - docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD
 script:
   - docker push toyangdon/bitnami-mysql:latest
